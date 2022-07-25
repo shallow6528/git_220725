@@ -1,0 +1,173 @@
+/* body{overflow-x: hidden;} */
+
+/* 폰트 */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;700&display=swap');
+body {margin:0;padding:0;font-size:0.75em;font-family: 'IBM Plex Sans KR', sans-serif;background:#fff}
+a {color:#000;text-decoration:none !important; }
+
+#container{ width: auto; float: none;}
+#hd, #wrapper, #ft{ min-width: auto}
+
+/* display none */
+#aside, .gnb_menu_btn,.pic_lt,.latest_wr,.latest_top_wr,#visit, .notice, .ft_info br:not(:nth-child(2)), #ft_wr h2{display: none;}
+
+/*img사이즈*/
+img{max-width: 100% !important;}
+
+
+/* 헤더 */
+.gnb_1da{color: #222; font-size: 1.2em;}
+#hd_wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;}
+#logo{padding: 0;}
+#hd{
+  background: transparent;
+  z-index: 999999999;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+/* main */
+#mainlogo{padding: 3rem 0;}
+#main .main_t h3{padding: 2rem 0 !important;}
+#main_p{padding: 10rem 3rem; z-index: 10;}
+.main_s h2{text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; color: #fff; padding: 1rem 0;}
+
+
+#main {
+  width: 100%;
+  height: 100%;
+}
+#main {
+  background-color: #f6f6f6;
+  background-image:
+    linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+    linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+    linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+    linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+    linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+    linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+    linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+    linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+    linear-gradient(#cdcccc, #cdcccc);
+  background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+}
+
+
+@keyframes bg1 {
+  0% {
+    top:-100px;
+  }
+  to {
+    top:0px;
+  } 
+}
+
+@keyframes bg2 {
+  0% {
+    top:0px;
+  }
+  to {
+    top:-100px; 
+  } 
+}
+
+#main .main_bg_01{
+  position:relative;
+  padding: 0 10rem 0 0;
+  left: 0; top:-100px;
+  animation:bg1 1s ease-in Infinite Alternate;
+}
+
+#main .main_bg_02{
+  position:relative;
+  left: 0;
+  top:100px;
+
+  animation:bg2 1s ease-in Infinite Alternate;
+}
+
+
+
+
+/* main 슬라이드 */
+#main .slide{display: flex; justify-content: flex-end;}
+#main .splide__pagination li{display: none !important; }
+#main .splide.is-initialized{width: 60rem; padding: 0; display: flex;}
+#main .splide__arrows{display: none;}
+
+
+/*container 공통*/
+.container h2{font-size: 4rem; font-weight: bold; text-align: center;}
+.btn{background: #C14545; color:#fff; line-height: 20px !important;}
+.btn:hover{background: #fff; color: #000; border:1px solid #C14545;line-height: 20px !important;}
+
+/*about*/
+#about{margin: 0 auto; padding: 10rem 0; width: 100%; height: 1080px; background-color: #fff; margin-bottom: 0;}
+#about .container_wr{display: flex; justify-content: space-around; width: 100%;}
+.text_1{display: flex; flex-direction: column; justify-content: center; }
+.make{display: flex; padding: 3rem 0;}
+.make li{height: 3.5rem; border-left: 0.2rem solid #222; padding: 0 1rem 0 0;}
+.make li p{padding: 0 1rem;}
+/* @media (min-width:620px){
+  .make li p{ font-size: 2rem;}
+}
+@media (min-width:992px){
+  .make li p{ font-size: 2.4rem ;}
+} */
+
+/* 어린이 독서단 */
+#ch{
+  background-image:url(/award/img/ch_01.png),url(/award/img/ch_02.png),url(/award/img/ch_bg.gif);
+  background-repeat:no-repeat,no-repeat,no-repeat;
+  background-position:center,center,center;
+  height: 1080px;
+  padding:5rem 0;
+}
+#ch p{padding: 1rem 0; font-size: 1rem;}
+.swiper{width: 70%;}
+.swiper-slide{height: 20rem;}
+.swiper-button-next,.swiper-button-prev{color: #C14545; background-color: transparent;}
+
+
+
+/* 이벤트 */
+#event .event_t{position: absolute; left: 0; right: 0;padding: 10rem 0;}
+#event .container_wr{display: flex; justify-content: space-between; width: 100%;}
+#event .event_text{padding: 7rem 0;}
+.event_bg{width: auto; margin: auto;}
+
+/*공모전 정보*/
+#info{background-color: #fff; padding: 7rem 0;}
+#info p{font-size: 1rem;}
+#info b{font-size: 1.2rem; padding: 1rem 0;}
+
+/* @media (min-width:620px){
+  #info p{ font-size: 1.5rem;}
+
+}
+@media (min-width:992px){
+  #info p{ font-size: 1rem ;}
+
+} */
+
+/*온라인정보*/
+
+
+
+/* footer */
+#ft_wr{float: none; width: 70%; display: flex; justify-content: space-around; align-items: flex-start;}
+#ft_wr .ft_cnt {width:100%; display: flex; justify-content: flex-start;}
+#ft_link a{padding: 0 2rem 2rem 0;}
+#ft_company{display: flex; justify-content: space-between;}
+#ft_company #logo{width: 33.3333%; }
+#ft_company a img{max-width: 150px;}
+
+

@@ -27,8 +27,8 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
   
     <?php }  ?>
     <?
-            $startdate = date("Y-m-d", time()); // 오늘 날짜 가져옴
-            $enddate = $list[$i]['wr_1']; // 마감일 2023-06-30 <-- 형식으로
+            $startdate = date("Y-m-d",time()); // 오늘 날짜 가져옴
+            $enddate = $list[$i]['wr_2']; // 마감일 2023-06-30 <-- 형식으로
             $timediffer=strtotime($enddate) - strtotime($startdate);   // 마감일과 오늘의 날짜 차이를 구함
             $day = floor(($timediffer)/(60*60*24));
             ?>
@@ -37,5 +37,22 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
 
 
     <? if($startdate = $enddate /* 오늘이 d-day 이라면 */) echo '오늘은 종료일///' ?>
+
+<?/*
+function d_day($m,$d,$y) {
+$now = time();
+$dday = mktime(0,0,0,$m,$d,$y);
+$xday = ceil(($dday-$now)/(60*60*24));
+if($xday >= 0) $result = '<b>D-'.$xday.'</b>';
+else {
+$result = '<b>D+'.abs($xday).'</b>';
+}
+return $result;
+}
+?>
+<h3 class="font-weight-bold">D<?php echo $dday ?></h3>
+<h5 class="font-weight-bold">마감일 까지 <?php echo $dday ?> 일 남았습니다.</h5>
+
+<?=d_day(6,30,2023)*/?>
 
     

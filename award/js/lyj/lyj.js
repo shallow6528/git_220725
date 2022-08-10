@@ -19,7 +19,7 @@
         slidesPerView: 3,
         spaceBetween: 30,
         slidesPerGroup: 3,
-        loop: true,
+        
         loopFillGroupWithBlank: true,
         pagination: {
           el: ".swiper-pagination",
@@ -27,25 +27,33 @@
         },
         
         breakpoints: {
-  
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 50,
+            slidesPerGroup: 1,
+           },
           640: {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 30,
+            slidesPerGroup: 1,
           },
           768: {
             slidesPerView: 2,
             spaceBetween: 40,
+            slidesPerGroup: 2,
           },
           1024: {
             slidesPerView: 3,
             spaceBetween: 50,
+            slidesPerGroup: 3,
           },
         },
-        // And if we need scrollbar
-        scrollbar: {
-          el: '#ch .swiper-scrollbar',
-        },
+        
       });
+
+    $('#btn').click(function(){
+      $('body').css('background-color','white')
+    });
 
 
 // 제이쿼리
@@ -56,7 +64,9 @@
         }, 400)
     })
 
-
+  //폼태그 js 해두기 
+ 
+   
 })
 
 

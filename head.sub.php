@@ -41,32 +41,24 @@ header("Pragma: no-cache"); // HTTP/1.0
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-
-<meta name="viewport" id="meta_viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">
-<meta name="HandheldFriendly" content="true">
-<meta name="format-detection" content="telephone=no">
-
-<meta http-equiv="imagetoolbar" content="no">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-
 <?php
+if (G5_IS_MOBILE) {
+    echo '<meta name="viewport" id="meta_viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL;
+    echo '<meta name="HandheldFriendly" content="true">'.PHP_EOL;
+    echo '<meta name="format-detection" content="telephone=no">'.PHP_EOL;
+} else {
+    echo '<meta http-equiv="imagetoolbar" content="no">'.PHP_EOL;
+    echo '<meta http-equiv="X-UA-Compatible" content="IE=Edge">'.PHP_EOL;
+}
+
 if($config['cf_add_meta'])
     echo $config['cf_add_meta'].PHP_EOL;
 ?>
 <title><?php echo $g5_head_title; ?></title>
 
-<!-- <link rel="stylesheet" href="https://shallow6528.cafe24.com/award/theme/basic/css/default.css?ver=<?php echo time(); ?>"> -->
-
-<?php
-if (defined('G5_IS_ADMIN')) {
-    if(!defined('_THEME_PREVIEW_'))
-        echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_ADMIN_URL.'/css/admin.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
-} else {
-    $shop_css = '';
-    if (defined('_SHOP_')) $shop_css = '_shop';
-    echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'default').$shop_css.'.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
-}
-?>
+<title><?php echo $g5_head_title; ?></title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="stylesheet" href="/award/theme/basic/css/default.css?ver=<?php echo time(); ?>">
 <!--[if lte IE 8]>
 <script src="<?php echo G5_JS_URL ?>/html5.js"></script>
 <![endif]-->
@@ -109,33 +101,8 @@ if(G5_IS_MOBILE) {
 if(!defined('G5_IS_ADMIN'))
     echo $config['cf_add_script'];
 ?>
-<!-- 폰트어썸 -->
-<script src="https://kit.fontawesome.com/1af7da0cec.js" crossorigin="anonymous"></script>
-<!-- 부트스트랩 4.6.1-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
-integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-<!-- 폰트 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
-
-<!-- swiper -->
-<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
-
-<!-- aos js 파일 -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!-- 개인 css파일 -->
-<link rel="stylesheet" href="/award/css/lyj/lyj.css?ver=<?php echo time(); ?>">
-<!-- aos css -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<!-- favicon -->
-<link rel="icon" href="/award/img/favi.png">
-
 </head>
-<body class='bg-light' <?php echo isset($g5['body_script']) ? $g5['body_script'] : ''; ?> >
-
+<body<?php echo isset($g5['body_script']) ? $g5['body_script'] : ''; ?>>
 <?php
 if ($is_member) { // 회원이라면 로그인 중이라는 메세지를 출력해준다.
     $sr_admin_msg = '';

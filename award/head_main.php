@@ -34,7 +34,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     }
     ?>
    
-    <div id="hd_wrapper">
+    <div id="hd_wrapper" class="d-flex">
         <div id="logo">
             <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" style="width:100%;" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
@@ -42,7 +42,12 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             <h2>메인메뉴</h2>
             <div class="gnb_wrap">
                 <ul id="gnb_1dul">
-                    <li class="gnb_1dli gnb_mnal"><button type="button" class="gnb_menu_btn" title="전체메뉴"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only">전체메뉴열기</span></button></li>
+                    <li class="gnb_1dli gnb_mnal d-lg-none">
+                        <button type="button" class="gnb_menu_btn pt-2" title="전체메뉴">
+                            <i class="fa fa-bars gnb_bar" aria-hidden="true"></i>
+                            <span class="sound_only">전체메뉴열기</span>
+                        </button>
+                    </li>
                     <?php
                     $menu_datas = get_menu_db(0, true);
                     $gnb_zindex = 999; // gnb_1dli z-index 값 설정용
@@ -51,7 +56,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                         if( empty($row) ) continue;
                         $add_class = (isset($row['sub']) && $row['sub']) ? 'gnb_al_li_plus' : '';
                     ?>
-                    <li class="gnb_1dli <?php echo $add_class; ?>" style="z-index:<?php echo $gnb_zindex--; ?>">
+                    <li class="gnb_1dli d-lg-block d-none<?php echo $add_class; ?>" style="z-index:<?php echo $gnb_zindex--; ?>">
                         <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da"><?php echo $row['me_name'] ?></a>
                         <?php
                         $k = 0;
@@ -80,7 +85,9 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     <?php } ?>
                 </ul>
                 <div id="gnb_all">
-                    <h2>전체메뉴</h2>
+                    <h2 class>
+                        <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" style="width:auto;" alt="<?php echo $config['cf_title']; ?>"></a>
+                    </h2>
                     <ul class="gnb_al_ul">
                         <?php
                         
@@ -112,12 +119,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                             <li class="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <br><a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다.<?php } ?></li>
                         <?php } ?>
                     </ul>
-                    <button type="button" class="gnb_close_btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                    <button type="button" class="gnb_close_btn">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
                 </div>
                 <div id="gnb_all_bg"></div>
             </div>
         </nav>
-        <ul class="hd_login">        
+        <!-- <ul class="hd_login">        
             <?php if ($is_member) {  ?>
             <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php">정보수정</a></li>
             <li><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a></li>
@@ -129,7 +138,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             <li><a href="<?php echo G5_BBS_URL ?>/login.php">로그인</a></li>
             <?php }  ?>
 
-        </ul>
+        </ul> -->
     </div>
     
     

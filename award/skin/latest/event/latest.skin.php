@@ -11,7 +11,7 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
 
 <section id="event" class="d-flex justify-content-center">
    
-    <div id="event_bg">
+
         <?php
             for ($i=0; $i<$list_count; $i++) {
             $thumb = get_list_thumbnail($bo_table, $list[$i]['wr_id'], $thumb_width, $thumb_height, false, true);
@@ -22,13 +22,14 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
                 $img = G5_IMG_URL.'/no_img.png';
                 $thumb['alt'] = '이미지가 없습니다.';
             }
-            $img_content = '<img src="'.$img.'" alt="'.$thumb['alt'].'" >';
-            $wr_href = get_pretty_url($bo_table, $list[$i]['wr_id']);
+           
         ?>
         
                 <?php echo run_replace('thumb_image_tag', $img_content, $thumb); ?>
-    </div>       
+
     <?php echo $list[$i]['wr_content']?>
+ 
+    
 </section>
       
        

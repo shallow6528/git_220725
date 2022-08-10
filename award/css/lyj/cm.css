@@ -1,0 +1,66 @@
+body {margin:0;padding:0;font-size:0.75em;font-family: 'IBM Plex Sans KR', sans-serif;background:#fff}
+a {color:#000;text-decoration:none !important; }
+
+#container{ width: auto; float: none;}
+#hd, #wrapper, #ft{ min-width: auto}
+
+/*폰트*/
+p{display: block;}
+.container h2{text-align: center; font-size: 4rem; font-weight: 600;}
+
+.ft100{font-weight: 100 !important;}
+.ft200{font-weight: 200 !important;}
+.ft300{font-weight: 300 !important;}
+.ft400{font-weight: 400 !important;}
+.ft500{font-weight: 500 !important;}
+.ft600{font-weight: 600 !important;}
+.ft700{font-weight: 700 !important;}
+
+.ft-size-01{font-size: 1rem !important;}
+.ft-size-012{font-size: 1.2rem !important; line-height: 2.4rem;}
+.ft-size-015{font-size: 1.5rem !important;}
+.ft-size-02{font-size: 2rem !important;}
+.ft-size-03{font-size: 3rem !important;}
+.ft-size-04{font-size: 4rem !important;}
+
+
+@media (max-width:450px){
+  .container h2{ font-size: 2rem; font-weight: 400;}
+}
+@media (max-width:620px){
+  .container h2{ font-size: 2rem; font-weight: 400;}
+}
+@media (max-width:992px){
+  .container h2{ font-size: 3rem; font-weight: 600;}
+
+}
+
+
+
+/* display none */
+#aside,.pic_lt,.latest_wr,.latest_top_wr,#visit, .notice, /*.ft_info br:not(:nth-child(2)),*/ #ft_wr h2{display: none;}
+
+/*img사이즈*/
+img{max-width: 100% !important;}
+
+.break-spaces{white-space: break-spaces;}
+
+/*container 공통*/
+.ptb-7{padding: 7rem 0;}
+
+/*버튼*/
+.btn, .btn-primary{background: #C14545; color:#fff; border: 0; line-height: 20px !important;  box-shadow: none; outline: none;}
+.btn-primary:focus {background: #fff !important; color:#000 !important; border: 0; line-height: 20px;  box-shadow: none; outline: none;}
+.btn:hover, .btn-primary:hover{background: #fff; color: #000; border:0;line-height: 20px !important; font-weight:bold;}
+
+.btn_b{background: #fff; color:#000; 
+  border-bottom: 2px solid #C14545; padding: 0 1rem !important;
+  line-height:35px;height:35px;padding:0 10px;text-align:center;}
+.btn_b:hover{background: #fff; color:#000; 
+  border: 0;  border-bottom: 2px solid #000 !important; padding: 0 1rem !important;
+  line-height:35px;height:35px;padding:0 10px;text-align:center;font-weight:bold;}
+.btn-agree-1 .form-check input:checked + label i:before{ color: black;}
+.btn-agree-1 .form-check input + label i:before{color: #fff;}
+.btn-agree-2 .form-check input:checked + label i:before{ color: black;}
+input[type=checkbox] + label { cursor: pointer; }
+
